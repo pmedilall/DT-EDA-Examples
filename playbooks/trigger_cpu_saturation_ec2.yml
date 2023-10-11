@@ -1,0 +1,13 @@
+---
+-
+  hosts: all
+  name: "Trigger CPU load on easytravel application"
+  tasks:
+    -
+      name: "initiate deployment change tasks (block)"
+      block:
+        -
+          name: "call easytravel configuration UI to apply configuration change"
+          uri:
+            url: "http://{{ easytravel_host }}:8079/services/ConfigurationService/setPluginEnabled?name={{ easytravel_plugin }}&enabled={{ easytravel_plugin_state }}"
+            status_code: 202
