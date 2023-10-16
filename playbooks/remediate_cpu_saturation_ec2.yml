@@ -1,10 +1,10 @@
 ---
 -
-  hosts: all
-  name: "Trigger CPU load on easytravel application"
+  hosts: localhost
+  name: "Remediate CPU saturation"
   tasks:
     -
-      name: "Trigger CPU saturation"
+      name: "Remediate CPU saturation issue"
       block:
         -
           name: "call easytravel configuration UI to apply configuration change"
