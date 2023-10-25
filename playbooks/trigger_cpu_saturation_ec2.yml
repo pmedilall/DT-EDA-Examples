@@ -12,7 +12,7 @@
         -
           name: "push Dynatrace custom configuration event"
           uri:
-            url: "{{ dt_api_url }}/v1/events?Api-Token={{ dt_api_token }}"
+            url: "{{ dynatrace_api_url }}/v1/events?Api-Token={{ dynatrace_api_token }}"
             method: POST
             headers:
               content-type: application/json
