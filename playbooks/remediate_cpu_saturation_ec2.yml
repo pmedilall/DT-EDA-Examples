@@ -14,7 +14,7 @@
 
     - name: Sleep for 9 mins to activate Davis AI
       wait_for:
-        delay: 540
+        delay: 660
         timeout: 0
       when: ansible_eda.event.payload.problemStatus == "OPEN"
     -
