@@ -12,9 +12,9 @@
       shell: "curl -X POST --header 'Authorization: Api-Token {{dynatrace_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Triggered Ansible playbook to resolve Failure rate increase problem\"}' {{dynatrace_api_url}}/api/v2/problems/{{ansible_eda.event.payload.eventId}}/comments"
       when: ansible_eda.event.payload.problemStatus == "OPEN"
 
-    - name: Sleep for 20 mins to activate Davis AI
+    - name: Sleep for 5 mins to activate Davis AI
       wait_for:
-        delay: 1200
+        delay: 300
         timeout: 0
       when: ansible_eda.event.payload.problemStatus == "OPEN"
     -
