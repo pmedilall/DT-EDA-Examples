@@ -17,5 +17,5 @@
       condition: event.payload.problemTitle contains "Failure rate increase"
       action:
         run_job_template:
-          name: "Remediate Application issue"
+          name: "Remediate Remediate Failure rate increase EC2"
           organization: "Default"
