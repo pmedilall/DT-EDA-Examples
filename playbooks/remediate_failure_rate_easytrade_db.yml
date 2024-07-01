@@ -1,0 +1,32 @@
+---
+-
+  hosts: localhost
+  name: "Remediate Failure Rate Increase"
+  tasks:
+    - name: Print Dynatrace ProblemId
+      debug:
+        msg: "{{ansible_eda.event.payload.eventId}}"
+      when: ansible_eda.event.payload.problemStatus == "OPEN"
+
+    - name: Post comment to Dynatrace - triggered playbook
+      shell: "curl -X POST --header 'Authorization: Api-Token {{dynatrace_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Triggered Ansible playbook to resolve Failure rate increase problem\"}' {{dynatrace_api_url}}/api/v2/problems/{{ansible_eda.event.payload.eventId}}/comments"
+      when: ansible_eda.event.payload.problemStatus == "OPEN"
+
+    - name: Sleep for 5 mins to activate Davis AI
+      wait_for:
+        delay: 180
+        timeout: 0
+      when: ansible_eda.event.payload.problemStatus == "OPEN"
+    -
+      name: "Remediate Failure Rate issue"
+      block:
+        -
+          name: "call easytrade DB service to apply configuration change"
+          shell: curl -X 'PUT' 'http://easytrade-frontend-easytrade.apps.rosa-t6zh7.1fe1.p1.openshiftapps.com/feature-flag-service/v1/flags/db_not_responding' -H 'accept: application/json' -H 'Content-Type: application/json'  -d '{'enabled': false}'
+ 
+            url: "http://{{ easytravel_host }}:8079/services/ConfigurationService/setPluginEnabled?name={{ easytravel_plugin }}&enabled={{ easytravel_plugin_state }}"
+            status_code: 202
+
+    - name: Post comment to Dynatrace - playbook ran successfully
+      shell: "curl -X POST --header 'Authorization: Api-Token {{dynatrace_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Successfully ran Ansible playbook\"}' {{dynatrace_api_url}}/api/v2/problems/{{ansible_eda.event.payload.eventId}}/comments"
+      when: ansible_eda.event.payload.problemStatus == "OPEN"
