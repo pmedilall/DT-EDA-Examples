@@ -6,7 +6,7 @@
     - dynatrace.event_driven_ansible.dt_esa_api:
         dt_api_host: "{{dt_api_host}}"
         dt_api_token: "{{dt_api_token}}"
-        delay: 60 # Default is 60 seconds, i.e. the plugin polls problems every 60 seconds
+        delay: 60
 
   rules:
     - name: Problem payload Dynatrace for CPU issue
