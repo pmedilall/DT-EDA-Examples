@@ -1,1 +1,23 @@
 
+---
+- name: Listen for events using a webhhok
+  hosts: all
+  sources:
+  - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 6011
+
+  rules:
+    - name: Problem payload Dynatrace for CPU issue
+      condition: event.payload.problemTitle contains "CPU saturation"
+      action:
+        run_job_template:
+          name: "Remediate CPU saturation issue"
+          organization: "Default"
+    
+    - name: Problem payload Dynatrace for DB Failure
+      condition: 'event.payload.problemTitle contains "Failure rate increase"'
+      action:
+        run_job_template:
+          name: "Remediate Failure rate increase for Easytrade DB"
+          organization: "Default"
