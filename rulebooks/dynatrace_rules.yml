@@ -1,5 +1,5 @@
 ---
-- name: Listen for events on a webhook
+- name: Listen for events using the event source plugin
   hosts: all
   
   sources:
