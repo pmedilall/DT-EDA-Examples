@@ -4,9 +4,9 @@
   
   sources:
     - dynatrace.event_driven_ansible.dt_esa_api:
-        dt_api_host: "{{dt_api_host}}"
-        dt_api_token: "{{dt_api_token}}"
-        delay: 60
+        dt_api_host: "{{ dt_api_host }}"
+        dt_api_token: "{{ dt_api_token }}"
+        delay: 10
 
   rules:
     - name: Problem payload Dynatrace for CPU issue
