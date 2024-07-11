@@ -5,22 +5,22 @@
   tasks:
     - name: Print Dynatrace ProblemId
       debug:
-        msg: "{{ ansible_eda.event.payload.eventId }}"
-      when: ansible_eda.event.payload.problemStatus == "ACTIVE"
+        msg: "{{ ansible_eda.event.problemId }}"
+      when: ansible_eda.event.status == "OPEN"
 
     - name: Post comment to Dynatrace - triggered playbook
-      shell: "curl -X POST --header 'Authorization: Api-Token {{dynatrace_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Triggered Ansible playbook to resolve Failure rate increase problem\"}' {{dynatrace_api_url}}/api/v2/problems/{{ansible_eda.event.payload.eventId}}/comments"
-      #when: ansible_eda.event.payload.eventData.problemStatus == "ACTIVE"
+      shell: "curl -X POST --header 'Authorization: Api-Token {{dynatrace_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Triggered Ansible playbook to resolve Failure rate increase problem\"}' {{dynatrace_api_url}}/api/v2/problems/{{ansible_eda.event.problemId}}/comments"
+      when: ansible_eda.event.status == "OPEN"
 
     - name: Sleep for 3 mins to activate Davis AI
       wait_for:
         delay: 180
         timeout: 0
-      when: ansible_eda.event.payload.problemStatus == "ACTIVE"
+      when: ansible_eda.event.status == "OPEN"
     
     - name: Call easytrade DB service to apply configuration change
       shell: "curl -X PUT '{{dynatrace_easytrade_url}}' -H 'Content-Type: application/json'  -d '{\"enabled\": \"false\"}'"
 
     - name: Post comment to Dynatrace - playbook ran successfully
-      shell: "curl -X POST --header 'Authorization: Api-Token {{dynatrace_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Successfully ran Ansible playbook\"}' {{dynatrace_api_url}}/api/v2/problems/{{ansible_eda.event.payload.eventId}}/comments"
-      when: ansible_eda.event.payload.problemStatus == "ACTIVE"
+      shell: "curl -X POST --header 'Authorization: Api-Token {{dynatrace_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Successfully ran Ansible playbook\"}' {{dynatrace_api_url}}/api/v2/problems/{{ansible_eda.event.problemId}}/comments"
+      when: ansible_eda.event.status == "OPEN"
