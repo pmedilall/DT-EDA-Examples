@@ -15,9 +15,3 @@
         run_job_template:
           name: "Remediate Failure rate increase for Easytrade DB"
           organization: "Default"
-    - name: Problem payload Dynatrace for CPU issue
-      condition: event.payload.eventData.problemTitle is match ("CPU saturation")
-      action:
-        run_job_template:
-          name: "AM-Remediate CPU saturation"
-          organization: "Default"
