@@ -10,8 +10,8 @@
 
   rules:
     - name: Problem payload Dynatrace for DB Failure
-      condition: 'event.payload.problemTitle contains "Failure rate increase"'
+      condition: event.title is match("Failure rate increase")
       action:
         run_job_template:
-          name: "Remediate Failure rate increase for Easytrade DB"
+          name: "Remediate Failure rate for Easytrade DB"
           organization: "Default"

@@ -1,0 +1,9 @@
+---
+-
+  hosts: localhost
+  name: "Remediate Failure rate for Easytrade DB"
+  tasks:
+    
+    - name: Call easytrade DB service to apply configuration change
+      shell: "curl -X PUT '{{dynatrace_easytrade_url}}' -H 'Content-Type: application/json'  -d '{\"enabled\": \"true\"}'"
+
