@@ -6,7 +6,7 @@
     - dynatrace.event_driven_ansible.dt_esa_api:
         dt_api_host: "{{ dynatrace_api_url }}"
         dt_api_token: "{{ dynatrace_api_token }}"
-        delay: 180
+        delay: 60
 
   rules:
     - name: Problem payload Dynatrace for DB Failure
