@@ -6,7 +6,7 @@
     - dynatrace.event_driven_ansible.dt_webhook: #use dt_webhook as source for ansible-rulebook 
         host: 0.0.0.0
         port: 6011
-        token: '{{ var_eda_token }}' 
+        #token: '{{ var_eda_token }}' 
 
   rules:
     - name: Problem payload Dynatrace for DB Failure rate increase issue
