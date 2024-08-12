@@ -4,7 +4,6 @@
 
 ## Red Hat Ansible Automation Controller Setup
 
-To deploy Easytrade in OpenShift you need to have:
 
 - Create AAP Access Token
   - 
