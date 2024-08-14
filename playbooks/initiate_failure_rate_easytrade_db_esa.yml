@@ -5,5 +5,5 @@
   tasks:
     
     - name: Call easytrade DB service to apply configuration change
-      shell: "curl -X PUT '{{dynatrace_easytrade_url}}' -H 'Content-Type: application/json'  -d '{\"enabled\": true}'"
+      shell: "curl -X PUT '{{dynatrace_easytrade_url}}/feature-flag-service/v1/flags/db_not_responding' -H 'Content-Type: application/json'  -d '{\"enabled\": \"true\"}'"
 
