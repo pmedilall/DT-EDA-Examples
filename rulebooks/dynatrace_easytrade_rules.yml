@@ -5,7 +5,7 @@
   sources:
     - dynatrace.event_driven_ansible.dt_webhook: #use dt_webhook as source for ansible-rulebook 
         host: 0.0.0.0
-        port: 6011
+        port: 5000
         token: '{{ var_eda_token }}' 
 
   rules:
