@@ -13,5 +13,5 @@
       condition: event.payload.eventData.problemTitle is match ("Failure rate increase")
       action:
         run_job_template:
-          name: "Remediate Failure rate increase for Easytrade DB"
+          name: "Remediate Failure rate increase for Easytrade DB Webhook"
           organization: "Default"
