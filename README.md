@@ -2,7 +2,7 @@
 
 # This repo hosts the rulebooks and playbooks for Event Driven Ansible integration use cases with Dynatrace
 
-##Prerequisites
+## Prerequisites
 
 - OpenShift cluster with an account that has admin privileges
 - Ansible Automation Platform (AAP) and Event Driven Ansible (EDA) instances (requires AAP >= 2.4)
@@ -22,8 +22,8 @@ We have 2 options for deploying a reference app that can be used for Dynatrace o
 ## Red Hat Ansible Automation Controller Setup
 
 
-- Create AAP Access Token
-  - 
+- Create EDA Token
+  - Refer to this [link](https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.4/html/event-driven_ansible_controller_user_guide/eda-set-up-token#eda-set-up-token) for setting up an access token for EDA to access Ansible Automation Controller
 
 - Create Project
   - 
