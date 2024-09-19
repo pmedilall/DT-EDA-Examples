@@ -35,6 +35,8 @@ We have 2 options for deploying a reference app that can be used for Dynatrace o
 
 - Create Decision Environment
   - [Here's a screenshot illustrating the decision environment creation](images/eda_decison_env_creation.png)
+  - <img width="1414" alt="eda_decison_env_creation" src="https://github.com/user-attachments/assets/17aaab4c-f92d-4a65-90bc-6b9897c58e94">
+
 
 - Create Project
   -  [Here's a screenshot illustrating the project creation](images/eda_project_creation.png)
