@@ -34,12 +34,13 @@ We have 2 options for deploying a reference app that can be used for Dynatrace o
 ## Event Driven Ansible Controller Setup
 
 - Create Decision Environment
-  - [Here's a screenshot illustrating the decision environment creation](images/eda_decison_env_creation.png)
   - <img width="1414" alt="eda_decison_env_creation" src="https://github.com/user-attachments/assets/17aaab4c-f92d-4a65-90bc-6b9897c58e94">
 
 
 - Create Project
-  -  [Here's a screenshot illustrating the project creation](images/eda_project_creation.png)
+  -  <img width="1408" alt="eda_project_creation" src="https://github.com/user-attachments/assets/ecce4614-6bae-4dd1-9b96-109fd1432599">
+
 
 - Create Rulebook Activation
-  -  [Here's a screenshot illustrating how to create a rulebook activation](images/eda_rulebook_activation.png)
+  -  <img width="1397" alt="eda_rulebook_activation" src="https://github.com/user-attachments/assets/99ecd46e-d16a-41e6-bf88-1d41b7c41b61">
+
