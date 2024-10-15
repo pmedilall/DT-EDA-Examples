@@ -4,8 +4,8 @@
   
   sources:
     - dynatrace.event_driven_ansible.dt_esa_api:
-        dt_api_host: "{{ dynatrace_api_url }}"
-        dt_api_token: "{{ dynatrace_api_token }}"
+        dt_api_host: "{{ dt_url }}"
+        dt_api_token: "{{ dt_token }}"
         delay: 60
 
   rules:
@@ -14,5 +14,10 @@
       condition: (event.title == "JavaScript error rate increase" or event.title == "Failure rate increase") and (event.impactedEntities[0].name == "BrokerService" or event.impactedEntities[0].name == "TradeManagement")
       action:
         run_job_template:
-          name: "Remediate Failure rate increase for Easytrade DB Plugin"
+          name: "Remediate Failure rate increase for Easytrade DB"
           organization: "Default"
+          job_args:
+              extra_vars:
+                dt_easytrade_url: '{{ et_url }}'
+                dt_api_token: '{{ dt_token }}'
+                dt_api_url: '{{ dt_url }}'
