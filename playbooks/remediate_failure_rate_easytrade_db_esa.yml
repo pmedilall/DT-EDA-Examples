@@ -5,7 +5,7 @@
   tasks:
     - name: Print Dynatrace ProblemId
       debug:
-        msg: "{{ ansible_eda.event.problemId }}"
+        msg: "{{ansible_eda.event.problemId}}"
       ##when: ansible_eda.event.status == "OPEN"
 
     - name: Post comment to Dynatrace - triggered playbook
