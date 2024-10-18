@@ -26,12 +26,12 @@ We have 2 options for deploying a reference app that can be used for Dynatrace o
   - Refer to this [link](https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.4/html/event-driven_ansible_controller_user_guide/eda-set-up-token#eda-set-up-token) for setting up an access token for EDA to access Ansible Automation Controller
 
 - Create Project
-  - ![Screenshot 2024-09-20 at 2 17 03 PM](https://github.com/user-attachments/assets/8bb77baf-7cfe-4bc5-8bad-7859b777c0a4)
+  - ![aap_project](https://github.com/user-attachments/assets/c117575a-8b94-4a40-af50-1edbe6cb9aed)
 
 
 - Create Templates
-  - ![Screenshot 2024-09-20 at 2 32 01 PM](https://github.com/user-attachments/assets/001a4c82-25ef-4f62-b6d7-bc589603f9a2)
-  - ![Screenshot 2024-09-20 at 2 31 07 PM](https://github.com/user-attachments/assets/975e82bf-0369-44c3-9b43-0c1fe18e2c0e)
+  - ![aap_break_template_1](https://github.com/user-attachments/assets/85395f6a-2bd7-4e2b-a3ab-6910931e5303)
+  - ![aap_fix_template_1](https://github.com/user-attachments/assets/9234b999-a915-46ab-a2d6-4fb6f5490f26)
 
 
 ![Screenshot 2024-09-20 at 2 32 25 PM](https://github.com/user-attachments/assets/edfbe711-854b-4125-8d83-6b275f63cffa)
@@ -41,7 +41,6 @@ We have 2 options for deploying a reference app that can be used for Dynatrace o
 
 - Create Decision Environment
   - ![eda_de_2](https://github.com/user-attachments/assets/19b911bf-f648-4826-b6bb-f9792e914d06)
-  - ![eda_de_1](https://github.com/user-attachments/assets/6145bae7-3779-4527-b75b-25d724ea6d43)
 
 
 - Create Project
