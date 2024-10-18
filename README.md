@@ -19,6 +19,22 @@ We have 2 options for deploying a reference app that can be used for Dynatrace o
   1. [Deploy](https://docs.dynatrace.com/docs/shortlink/oneagent-linux-install) Dynatrace OneAgent 
   2. Here's a [guide](https://community.dynatrace.com/t5/Start-with-Dynatrace/easyTravel-Documentation-and-Download/m-p/181271) for deploying the Easytravel app on RHEL 
 
+## Dynatrace Tenant Setup
+
+- Web application detection
+  - ![dt_webapp_detection_1](https://github.com/user-attachments/assets/3860e263-080b-41d9-bea8-912bc97da2f7)
+  - ![dt_webapp_detection_2](https://github.com/user-attachments/assets/f93aa8fd-1c06-4ade-90ab-be394ab77d70)
+ 
+- Web application tagging
+  - ![dt_webapp_tag](https://github.com/user-attachments/assets/d742d464-c0fa-4ba6-80b8-d5fea268d644)
+
+- Web application user tagging for identiying user sessions by names
+  - ![dt_webapp_usertag_1](https://github.com/user-attachments/assets/6e571d92-42bb-4340-8022-7053a237e52c)
+  - ![dt_webapp_usertag_2](https://github.com/user-attachments/assets/79f73b96-0f71-4f8a-b48a-e6e0ef848abb)
+  - ![dt_webapp_usertag_3](https://github.com/user-attachments/assets/09e87498-6279-408c-8e43-27d83abcbca5)
+  - ![dt_webapp_usertag_4](https://github.com/user-attachments/assets/55279a1d-47ab-41c3-9990-db7a8047dec1)
+
+
 ## Red Hat Ansible Automation Controller Setup
 
 
