@@ -65,7 +65,7 @@ We have 2 options for deploying a reference app that can be used for Dynatrace o
 
 
 - Create Rulebook Activation
-  The example shown here is using the Dynatrace Event Source Plugin. The repo will be updated shortly with an example for using a Webhook.
+  - The example shown here is using the Dynatrace Event Source Plugin. The repo will be updated shortly with an example for using a Webhook.
   -  ![eda_rulebook_1](https://github.com/user-attachments/assets/226d4da9-c54c-4246-9a51-6f7be7f7cb96)
   -  ![eda_rulebook_2](https://github.com/user-attachments/assets/4e26616c-9a8e-427a-8cfd-8cdd94df03bb)
 
