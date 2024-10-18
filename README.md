@@ -34,7 +34,8 @@ We have 2 options for deploying a reference app that can be used for Dynatrace o
   - ![aap_fix_template_1](https://github.com/user-attachments/assets/9234b999-a915-46ab-a2d6-4fb6f5490f26)
 
 
-![Screenshot 2024-09-20 at 2 32 25 PM](https://github.com/user-attachments/assets/edfbe711-854b-4125-8d83-6b275f63cffa)
+- ![aap_job_templates](https://github.com/user-attachments/assets/7e5002e3-141b-4c28-a631-caf9d3e10a2e)
+
 
 
 ## Event Driven Ansible Controller Setup
