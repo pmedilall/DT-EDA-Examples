@@ -13,7 +13,7 @@
 ## Reference App Setup for Observability
 
 We have 2 options for deploying a reference app that can be used for Dynatrace observability and simulating problem events that can be detected by Dynatrace.
-NOTE: The Dynatrace tenant and Ansible/EDA setup instructions in the following sections are using Easytrade as the reference app.
+NOTE: The Dynatrace tenant and Ansible/EDA setup instructions in the following sections are using Easytrade as the reference app but they apply to the Easytravel app as well.
 
 - Set up Easytrade app on OpenShift
   1. [Deploy](https://docs.dynatrace.com/docs/shortlink/installation-openshift-operatorhub#installation) the Dynatrace Certified Operator from the OpenShift OperatorHub
@@ -37,6 +37,8 @@ NOTE: The Dynatrace tenant and Ansible/EDA setup instructions in the following s
   - ![dt_webapp_usertag_2](https://github.com/user-attachments/assets/79f73b96-0f71-4f8a-b48a-e6e0ef848abb)
   - ![dt_webapp_usertag_3](https://github.com/user-attachments/assets/09e87498-6279-408c-8e43-27d83abcbca5)
   - ![dt_webapp_usertag_4](https://github.com/user-attachments/assets/55279a1d-47ab-41c3-9990-db7a8047dec1)
+  - ![dt_easytravel_usertag](https://github.com/user-attachments/assets/58599bf3-f2c3-4058-bb04-37aee2d30b04)
+
 
 
 ## Red Hat Ansible Automation Controller Setup
