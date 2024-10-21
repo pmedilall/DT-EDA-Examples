@@ -8,7 +8,9 @@
 - Ansible Automation Platform (AAP) and Event Driven Ansible (EDA) instances (requires AAP >= 2.4)
 
 ### Escape Room Lab Setup
-- For the Escape Room setup, you can provision the following RH Demo Platform catalog item in Workshop mode: [Event-driven Ansible Demo](https://demo.redhat.com/catalog?item=babylon-catalog-prod/enterprise.event-driven-ansible.prod)
+- For the Escape Room setup, you can do one of the following:
+  - provision the following RH Demo Platform catalog item in Workshop mode: [Event-driven Ansible Demo](https://demo.redhat.com/catalog?item=babylon-catalog-prod/enterprise.event-driven-ansible.prod)
+  - provision multiple instances of Ansible and EDA depending on the number of users
 
 ## Reference App Setup for Observability
 
