@@ -7,6 +7,9 @@
 - OpenShift cluster with an account that has admin privileges
 - Ansible Automation Platform (AAP) and Event Driven Ansible (EDA) instances (requires AAP >= 2.4)
 
+### Escape Room Lab Setup
+- For the Escape Room setup, you can provision the following RH Demo Platform catalog item in Workshop mode: [Event-driven Ansible Demo](https://demo.redhat.com/catalog?item=babylon-catalog-prod/enterprise.event-driven-ansible.prod)
+
 ## Reference App Setup for Observability
 
 We have 2 options for deploying a reference app that can be used for Dynatrace observability and simulating problem events that can be detected by Dynatrace.
