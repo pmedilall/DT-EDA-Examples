@@ -8,13 +8,12 @@
 - Ansible Automation Platform (AAP) and Event Driven Ansible (EDA) instances (requires AAP >= 2.4)
 
 ### Escape Room Lab Setup
-- For the Escape Room setup, you can do one of the following:
-  - provision the following RH Demo Platform catalog item in Workshop mode: [Event-driven Ansible Demo](https://demo.redhat.com/catalog?item=babylon-catalog-prod/enterprise.event-driven-ansible.prod)
-  - provision multiple instances of Ansible and EDA depending on the number of users
+- For the Escape Room setup, you can provision the following RH Demo Platform catalog item: [Event-driven Ansible Demo](https://demo.redhat.com/catalog?item=babylon-catalog-prod/enterprise.event-driven-ansible.prod) OR provision your own Ansible and EDA instances
 
 ## Reference App Setup for Observability
 
 We have 2 options for deploying a reference app that can be used for Dynatrace observability and simulating problem events that can be detected by Dynatrace.
+NOTE: The Dynatrace tenant and Ansible/EDA setup instructions in the following sections are using Easytrade as the reference app.
 
 - Set up Easytrade app on OpenShift
   1. [Deploy](https://docs.dynatrace.com/docs/shortlink/installation-openshift-operatorhub#installation) the Dynatrace Certified Operator from the OpenShift OperatorHub
