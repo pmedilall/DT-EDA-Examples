@@ -61,6 +61,7 @@ NOTE: The Dynatrace tenant and Ansible/EDA setup instructions in the following s
 
 
 ## Event Driven Ansible Controller Setup
+The Ansible EDA setup currently only refers to the [Dynatrace Event Source Plugin](https://github.com/Dynatrace/Dynatrace-EventDrivenAnsible/blob/main/extensions/eda/plugins/event_source/dt_esa_api.py). The instructions will be updated to also include the Dynatrace Webhook Plugin once we update everything to use AAP 2.5.
 
 - Create Decision Environment
   - ![eda_de_2](https://github.com/user-attachments/assets/19b911bf-f648-4826-b6bb-f9792e914d06)
