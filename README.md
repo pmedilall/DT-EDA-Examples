@@ -25,6 +25,11 @@ NOTE: The Dynatrace tenant and Ansible/EDA setup instructions in the following s
 
 ## Dynatrace Tenant Setup
 
+- Token for Accessing Dynatrace API from Ansible/EDA
+  - See [Dynatrace API Token Creation](https://docs.dynatrace.com/docs/shortlink/api-authentication) guide for details
+  - ![Screenshot 2024-10-25 at 3 35 33 PM](https://github.com/user-attachments/assets/750cc0c0-0482-4441-80e2-173935703824)
+
+
 - Web application detection
   - ![dt_webapp_detection_1](https://github.com/user-attachments/assets/3860e263-080b-41d9-bea8-912bc97da2f7)
   - ![dt_webapp_detection_2](https://github.com/user-attachments/assets/f93aa8fd-1c06-4ade-90ab-be394ab77d70)
