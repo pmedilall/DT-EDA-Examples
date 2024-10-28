@@ -1,7 +1,7 @@
----
+y---
 -
   hosts: localhost
-  name: "Initiate Failure rate for Easytrade DB"
+  name: "easytrade-break"
   tasks:
     
     - name: Call easytrade DB service to apply configuration change
