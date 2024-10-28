@@ -14,7 +14,7 @@
       condition: event.status == "OPEN" and (event.title == "JavaScript error rate increase" or event.title == "Failure rate increase") and (event.impactedEntities[0].name == "BrokerService" or event.impactedEntities[0].name == "TradeManagement")
       action:
         run_job_template:
-          name: "Remediate Failure rate increase for Easytrade DB"
+          name: "easytrade-fix"
           organization: "Default"
           job_args:
               extra_vars:
