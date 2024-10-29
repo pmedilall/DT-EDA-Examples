@@ -1,7 +1,7 @@
 ---
 -
   hosts: localhost
-  name: "Remediate Failure rate increase for Easytrade DB"
+  name: "easytrade-fix"
   tasks:
     - name: Print Dynatrace ProblemId
       debug:
