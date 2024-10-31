@@ -1,7 +1,7 @@
 ---
 -
   hosts: localhost
-  name: "easytrade-fix"
+  name: easytrade-fix
   tasks:
     - name: Print Dynatrace ProblemId
       debug:
