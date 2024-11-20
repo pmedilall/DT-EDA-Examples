@@ -1,7 +1,7 @@
 ---
 -
   hosts: localhost
-  name: "Remediate Failure rate increase for Easytrade DB Webhook"
+  name: "easytrade-fix-webhook"
   tasks:
     - name: Print Dynatrace ProblemId
       debug:
