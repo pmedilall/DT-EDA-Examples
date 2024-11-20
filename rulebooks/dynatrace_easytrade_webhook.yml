@@ -15,3 +15,8 @@
         run_job_template:
           name: "Remediate Failure rate increase for Easytrade DB Webhook"
           organization: "Default"
+          job_args:
+            extra_vars:
+              dt_easytrade_url: '{{ et_url }}'
+              dt_api_token: '{{ dt_token }}'
+              dt_api_url: '{{ dt_url }}'
