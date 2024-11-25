@@ -1,10 +1,9 @@
 ---
-
+-
   hosts: localhost
   gather_facts: yes
   name: easytrade-fix
   tasks:
-
     - name: Display ansible_eda
       debug:
         var: ansible_eda 
