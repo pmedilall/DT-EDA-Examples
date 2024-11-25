@@ -1,6 +1,7 @@
 ---
 -
   hosts: localhost
+  gather_facts: yes
   name: easytrade-fix
   tasks:
     - name: Print Dynatrace ProblemId
