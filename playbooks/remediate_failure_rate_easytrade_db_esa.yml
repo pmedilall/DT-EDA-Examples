@@ -4,10 +4,7 @@
   gather_facts: yes
   name: easytrade-fix
   tasks:
-    - name: Display ansible_eda
-      debug:
-        var: ansible_eda 
-  
+    
     - name: Print Dynatrace ProblemId
       debug:
         msg: "{{ansible_eda.event.problemId}}"
