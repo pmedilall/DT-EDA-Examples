@@ -12,6 +12,12 @@
 
   tasks:
 
+    - name: Authenticate to OpenShift
+      community.okd.openshift_auth:
+        host: "{{ openshift_api_url }}"
+        api_key: "{{ openshift_api_token }}"
+        validate_certs: false
+
     - name: Adjust deployment limits
       kubernetes.core.k8s:
         definition:
