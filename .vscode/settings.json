@@ -1,5 +1,6 @@
 {
     "yaml.schemas": {
         "https://raw.githubusercontent.com/ansible/ansible-rulebook/main/ansible_rulebook/schema/ruleset_schema.json": "file:///c%3A/Users/jairam.ramaswamy/DT-EDA-examples/DT-EDA-Examples/rulebooks/dynatrace_rules.yml"
-    }
+    },
+    "ansible.python.interpreterPath": "/usr/bin/python3"
 }
