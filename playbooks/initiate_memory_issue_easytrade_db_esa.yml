@@ -13,13 +13,13 @@
   tasks:
 
     - name: Authenticate to OpenShift
-      openshift_auth:
+      redhat.openshift.openshift_auth:
         host: "{{ openshift_api_url }}"
         api_key: "{{ openshift_api_token }}"
         validate_certs: false
 
     - name: Adjust deployment limits
-      kubernetes.core.k8s:
+      redhat.openshift.k8s:
         definition:
           apiVersion: apps/v1
           kind: Deployment
