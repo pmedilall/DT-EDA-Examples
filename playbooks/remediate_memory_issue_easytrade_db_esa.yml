@@ -1,0 +1,32 @@
+---
+-
+  hosts: localhost
+  name: "fix-easytrade-memory-contention"
+  vars:
+    deployment_name: accountservice
+    namespace: easytrade
+    container_name: accountservice
+
+    resource_limit_memory: 500Mi
+    resource_request_memory: 100Mi
+
+  tasks:
+
+    - name: Adjust deployment limits
+      kubernetes.core.k8s:
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: "{{ deployment_name }}"
+            namespace: "{{ namespace }}"
+          spec:
+            template:
+              spec:
+                containers:
+                  - name: "{{ container_name }}"
+                    resources:
+                      limits:
+                        memory: "{{ resource_limit_memory }}"
+  
+
