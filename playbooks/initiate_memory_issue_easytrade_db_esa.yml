@@ -41,5 +41,7 @@
                     resources:
                       limits:
                         memory: "{{ resource_limit_memory }}"
+                      requests:
+                        memory: "{{ resource_request_memory }}"
   
 
