@@ -40,7 +40,7 @@
                   - name: "{{ container_name }}"
                     resources:
                       limits:
-                        memory: null
+                        memory: "{{ resource_limit_memory }}"
                       requests:
                         memory: "{{ resource_request_memory }}"
   
