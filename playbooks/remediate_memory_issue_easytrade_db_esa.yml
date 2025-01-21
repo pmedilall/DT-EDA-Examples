@@ -17,7 +17,7 @@
         msg: "{{ansible_eda.event.problemId}}"
     
     - name: Post comment to Dynatrace - triggered playbook
-      shell: "curl -X POST --header 'Authorization: Api-Token {{dt_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Triggered Ansible playbook to resolve Failure rate increase problem\"}' {{dt_api_url}}/api/v2/problems/{{ansible_eda.event.problemId}}/comments"
+      shell: "curl -X POST --header 'Authorization: Api-Token {{dt_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Triggered Ansible playbook to resolve Memory Limit problem\"}' {{dt_api_url}}/api/v2/problems/{{ansible_eda.event.problemId}}/comments"
 
     - name: Authenticate to OpenShift
       redhat.openshift.openshift_auth:
