@@ -12,6 +12,13 @@
 
   tasks:
 
+    - name: Print Dynatrace ProblemId
+      debug:
+        msg: "{{ansible_eda.event.problemId}}"
+    
+    - name: Post comment to Dynatrace - triggered playbook
+      shell: "curl -X POST --header 'Authorization: Api-Token {{dt_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Triggered Ansible playbook to resolve Failure rate increase problem\"}' {{dt_api_url}}/api/v2/problems/{{ansible_eda.event.problemId}}/comments"
+
     - name: Authenticate to OpenShift
       redhat.openshift.openshift_auth:
         host: "{{ openshift_api_url }}"
@@ -46,3 +53,6 @@
                         memory: "{{ resource_request_memory }}"
   
 
+    - name: Post comment to Dynatrace - playbook ran successfully
+      shell: "curl -X POST --header 'Authorization: Api-Token {{dt_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Successfully ran Ansible playbook\"}' {{dt_api_url}}/api/v2/problems/{{ansible_eda.event.problemId}}/comments"
+      ##when: ansible_eda.event.status == "OPEN"
