@@ -33,7 +33,7 @@
                 dt_api_token: '{{ dt_token }}'
                 dt_api_url: '{{ dt_url }}'
     - name: Problem payload Dynatrace for Easytrade memory contention issue
-      condition: event.status == "OPEN" and event.title == "Out-of-memory kills" and event.impactedEntities[0].name == "accountservice"
+      condition: event.status == "OPEN" and event.title == "Out-of-memory kills" #and event.impactedEntities[0].name == "accountservice"
       action:
         run_job_template:
           name: fix-easytrade-memory-contention
