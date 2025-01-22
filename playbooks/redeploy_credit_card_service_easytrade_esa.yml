@@ -1,7 +1,7 @@
 ---
 -
   hosts: localhost
-  name: "fix-easytrade-memory-contention"
+  name: "redeploy-easytrade-credit-card-service"
   vars:
     pod_name: credit-card-order-service
     namespace: easytrade
