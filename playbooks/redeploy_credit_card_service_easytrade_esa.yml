@@ -3,12 +3,9 @@
   hosts: localhost
   name: "fix-easytrade-memory-contention"
   vars:
-    deployment_name: accountservice
+    pod_name: credit-card-order-service
     namespace: easytrade
-    container_name: accountservice
-
-    resource_limit_memory: 500Mi
-    resource_request_memory: 100Mi
+    container_name: credit-card-order-service
 
   tasks:
 
@@ -17,7 +14,7 @@
         msg: "{{ansible_eda.event.problemId}}"
     
     - name: Post comment to Dynatrace - triggered playbook
-      shell: "curl -X POST --header 'Authorization: Api-Token {{dt_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller-Triggered Ansible playbook {{ ansible_play_name }} to resolve Memory Limit problem\"}' {{dt_api_url}}/api/v2/problems/{{ansible_eda.event.problemId}}/comments"
+      shell: "curl -X POST --header 'Authorization: Api-Token {{dt_api_token}}' -H 'Content-Type: application/json' -d '{\"message\": \"Ansible EDA controller - Triggered Ansible playbook {{ ansible_play_name }} to resolve credit card service problem\"}' {{dt_api_url}}/api/v2/problems/{{ansible_eda.event.problemId}}/comments"
 
     - name: Authenticate to OpenShift
       redhat.openshift.openshift_auth:
@@ -27,30 +24,24 @@
         validate_certs: false
       register: ocp_auth
 
-    - name: Adjust deployment limits
+    - name: Redeploy pod
       vars:
         api_key: "{{ ocp_auth.openshift_auth.api_key }}"
       redhat.openshift.k8s:
-        state: "patched"
+        state: "absent"
         api_key: "{{ api_key }}"
         host: "{{ openshift_api_url }}"
         validate_certs: false
         definition:
           apiVersion: apps/v1
-          kind: Deployment
+          kind: Pod
           metadata:
-            name: "{{ deployment_name }}"
+            labels:
+              app: "{{ pod_name }}"
             namespace: "{{ namespace }}"
           spec:
-            template:
-              spec:
-                containers:
-                  - name: "{{ container_name }}"
-                    resources:
-                      limits:
-                        memory: "{{ resource_limit_memory }}"
-                      requests:
-                        memory: "{{ resource_request_memory }}"
+            containers:
+              - name: "{{ container_name }}"
   
 
     - name: Post comment to Dynatrace - playbook ran successfully
