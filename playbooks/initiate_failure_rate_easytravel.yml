@@ -3,6 +3,8 @@
   hosts: localhost
   gather_facts: false
   connection: local
+  vars:
+    - dt_easytravel_url: http://rh-dynatrace-08.cool.lab:8091
   tasks:
     - name: call easytravel API to break purchase button
       ansible.builtin.uri:
