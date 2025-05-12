@@ -1,9 +1,17 @@
 ---
--
+- name: break easytravel demo
   hosts: localhost
-  name: "Initiate Failure rate increase for Easytravel"
+  gather_facts: false
+  connection: local
+  vars:
+    - dt_easytravel_url: http://easytravel-frontend-easytravel-demo.apps.cluster-gkn4l.dynamic.redhatworkshops.io
   tasks:
-    
-    - name: Call easytrade DB service to apply configuration change
-      shell: "curl -X PUT '{{dt_easytravel_url}}//services/ConfigurationService/setPluginEnabled?name=LoginProblems&enabled=true' -H 'Content-Type: application/json' "
-
+    - name: call easytravel API to break purchase button
+      ansible.builtin.uri:
+        url: '{{ dt_easytravel_url }}/services/ConfigurationService/setPluginEnabled?name=CreditCardCheckError500&enabled=true'
+        return_content: true
+        status_code: 202
+      register: url_return
+    - name: print result
+      debug:
+        var: url_return
