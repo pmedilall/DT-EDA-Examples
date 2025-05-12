@@ -3,8 +3,6 @@
   hosts: localhost
   gather_facts: false
   connection: local
-  vars:
-    - dt_easytravel_url: http://easytravel-frontend-easytravel-demo.apps.cluster-p8fqj.p8fqj.sandbox1449.opentlc.com
   tasks:
     - name: call easytravel API to break purchase button
       ansible.builtin.uri:
