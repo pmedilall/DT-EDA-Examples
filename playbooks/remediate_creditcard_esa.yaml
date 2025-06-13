@@ -1,6 +1,10 @@
 ---
 - hosts: localhost
   name: easytrade-fix
+
+  vars:
+    dt_easytrade_url: "http://easytrade-frontend-easytrade.apps.cluster-qgxw5.dynamic.redhatworkshops.io"
+
   tasks:
 
     - name: Print Dynatrace ProblemId
