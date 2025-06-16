@@ -48,10 +48,10 @@
                 dt_api_url: '{{ dt_url }}'
     
     - name: Problem payload Dynatrace for Easytrade Credit Card Order Service Failure
-      condition: event.status == "OPEN" and (event.title == "JavaScript error rate increase" or event.title == "Failure rate increase") and (event.rootCauseEntity == "easytrade-demo" or event.rootCauseEntity == "OrderController")
+      condition: event.status == "OPEN" and (event.title == "JavaScript error rate increase" or event.title == "Failure rate increase") and (event.impactedEntities[0].name == "OrderController" or event.rootCauseEntity == "OrderController")
       action:
         run_job_template:
-          name: redeploy-easytrade-credit-card-service
+          name: remediate_creditcard
           organization: Default
           job_args:
               extra_vars:
