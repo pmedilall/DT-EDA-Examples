@@ -31,7 +31,7 @@
         (event.impactedEntities[0].name == "OrderController" or event.rootCauseEntity == "OrderController")
       action:
         run_job_template:
-          name: remediate_creditcard
+          name: remediatecc
           organization: Default
           job_args:
             extra_vars:
