@@ -22,7 +22,7 @@
             extra_vars:
               dt_token: "{{ dt_token }}"
               dt_url: "{{ dt_url }}"
-              dt_easytrade_url: "{{ et_url }}"
+              dt_easytrade_url: "{{ dt_easytrade_url }}"
 
     - name: Problem payload Dynatrace for Credit Card Service
       condition: >
@@ -37,4 +37,4 @@
             extra_vars:
               dt_token: "{{ dt_token }}"
               dt_url: "{{ dt_url }}"
-              dt_easytrade_url: "{{ et_url }}"
+              dt_easytrade_url: "{{ dt_easytrade_url }}"
