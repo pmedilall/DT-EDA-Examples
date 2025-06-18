@@ -12,10 +12,10 @@
     - name: Post comment to Dynatrace - triggered playbook
       shell: >
         curl -X POST 
-        --header 'Authorization: Api-Token {{ dt_api_token }}' 
+        --header 'Authorization: Api-Token {{ dt_token }}' 
         -H 'Content-Type: application/json' 
         -d '{"message": "Ansible EDA controller - Triggered Ansible playbook {{ ansible_play_name }} to resolve Failure rate increase problem"}' 
-        {{ dt_api_url }}/api/v2/problems/{{ ansible_eda.event.problemId }}/comments
+        {{ dt_url }}/api/v2/problems/{{ ansible_eda.event.problemId }}/comments
       when: ansible_eda.event.status == "OPEN"
 
     - name: Sleep for 3 mins to activate Davis AI
@@ -34,8 +34,8 @@
     - name: Post comment to Dynatrace - playbook ran successfully
       shell: >
         curl -X POST 
-        --header 'Authorization: Api-Token {{ dt_api_token }}' 
+        --header 'Authorization: Api-Token {{ dt_token }}' 
         -H 'Content-Type: application/json' 
         -d '{"message": "Ansible EDA controller - Successfully ran Ansible playbook {{ ansible_play_name }}"}' 
-        {{ dt_api_url }}/api/v2/problems/{{ ansible_eda.event.problemId }}/comments
+        {{ dt_url }}/api/v2/problems/{{ ansible_eda.event.problemId }}/comments
       when: ansible_eda.event.status == "OPEN"
