@@ -1,0 +1,40 @@
+---
+- name: Listen for events using the event source plugin
+  hosts: all
+
+  sources:
+    - dynatrace.event_driven_ansible.dt_esa_api:
+        dt_api_host: "{{ dt_url }}"
+        dt_api_token: "{{ dt_token }}"
+        delay: 60
+
+  rules:
+    - name: Problem payload Dynatrace for Easytrade DB Failure
+      condition: >
+        event.status == "OPEN" and
+        (event.title == "JavaScript error rate increase" or event.title == "Failure rate increase") and
+        (event.impactedEntities[0].name == "BrokerService" or event.impactedEntities[0].name == "TradeManagement")
+      action:
+        run_job_template:
+          name: easytrade-fix
+          organization: Default
+          job_args:
+            extra_vars:
+              dt_token: "{{ dt_token }}"
+              dt_url: "{{ dt_url }}"
+              dt_easytrade_url: "{{ et_url }}"
+
+    - name: Problem payload Dynatrace for Credit Card Service
+      condition: >
+        event.status == "OPEN" and
+        (event.title == "JavaScript error rate increase" or event.title == "Failure rate increase") and
+        (event.impactedEntities[0].name == "OrderController" or event.rootCauseEntity == "OrderController")
+      action:
+        run_job_template:
+          name: remediatecc
+          organization: Default
+          job_args:
+            extra_vars:
+              dt_token: "{{ dt_token }}"
+              dt_url: "{{ dt_url }}"
+              dt_easytrade_url: "{{ et_url }}"
